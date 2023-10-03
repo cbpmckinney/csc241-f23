@@ -4,7 +4,7 @@ char * myfunc1(void)
 {
     char mystring[] = "Wabash Always Fights!";
     printf("Inside MyFunc1 is %s: \n", mystring);
-    return &mystring;
+    return mystring;
 
 }
 
