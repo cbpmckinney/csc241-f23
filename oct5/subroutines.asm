@@ -30,7 +30,15 @@ main:
     ldr x0, =mystring
     bl printf 
 
-    
+    ldr x4, =num1
+    ldr w0, [x4]
+    ldr x5, =num2
+    ldr w1, [x5]
+    bl myadd
+
+    mov w1, w0
+    ldr x0, =mystring
+    bl printf
 
 
     ldp x29, x30, [sp], #16
