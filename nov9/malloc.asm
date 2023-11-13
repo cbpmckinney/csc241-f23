@@ -15,9 +15,14 @@ main:
     mov w0, #32  //ask for 32 bytes of memory
     bl malloc
 
+    str x0, [sp, #-16]! //store pointer for later
+
     mov x1, x0
     ldr x0, =mystring
     bl printf
+
+    ldr x0, [sp], #16
+    bl free  // free allocated memory
 
     ldp x29, x30, [sp], #16
     mov w0, #0
