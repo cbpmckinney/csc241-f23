@@ -91,6 +91,7 @@ Apollo:
 
 
     ldp x29, x30, [sp], #16
+    ret
 
 // think of this as double sinpi2x(double x, double *ptr)
 // the pointer is to a coefficient table
