@@ -1,3 +1,4 @@
+.data
 //32 bit Apollo Coefficients
 ctabApollo32:
   .word 0x3fc90a4d
@@ -65,7 +66,7 @@ outstr: .asciz "The sine of %f degrees is\nApollo %1.15f\nChebyshev %1.15f\nTayl
 .text
 .global main
 main:
-    str x29, x30, [sp, #-16]!
+    stp x29, x30, [sp, #-16]!
 
     // main() should accept user input, divide by 90, then pass that value
     // to three subroutines.  Two copies of sinpi2x, and Apollo.
@@ -74,7 +75,7 @@ main:
     
 
 
-    ldr x29, x30, [sp], #16
+    ldp x29, x30, [sp], #16
     mov w0, #0
     ret
 
